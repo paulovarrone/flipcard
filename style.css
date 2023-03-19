@@ -6,18 +6,23 @@
 
 :root {
     --ff-: 'Yusei Magic', sans-serif;
-
+    --bg-body: rgb(82, 1, 34);
+    --txt: #f2d250;
+    --txt-card: #ffffff;
+    --beige: #fcfadd;
 }
 
 body {
     background: rgb(26, 25, 25);
+    background: var(--bg-body); 
+    
 }
 
 header nav h1 {
     font-family: var(--ff-);
     text-align: center;
     margin-top: 50px;
-    color: aliceblue;
+    color: var(--txt);
 }
 
 header nav .social {
@@ -30,7 +35,7 @@ header nav .social {
 
 }
 
-@media (min-width: 600px) {
+@media (min-width: 1180px) {
     header nav .social {
         text-align: center;
         margin: 20px 0 100px;
@@ -43,9 +48,10 @@ header nav .social {
 
     nav {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         margin-top: 50px;
         align-items: baseline;
+        gap: 30px;
     }
 
 }
@@ -54,7 +60,7 @@ header nav .social a img {
     width: 50px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 1180px) {
     header nav .social a img {
         width: 30px;
     }
@@ -69,11 +75,26 @@ header nav .social a img {
 
 @media (min-width: 600px) {
     .cards {
+        display: grid;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+        grid-template-areas: "a b" 
+                             "c d";
+    }
+
+}
+
+@media (min-width: 1080px) {
+    .cards {
         display: flex;
         flex-direction: row;
         justify-content: center;
         gap: 50px;
     }
+
+    
 }
 
 .card {
@@ -82,10 +103,16 @@ header nav .social a img {
     height: 350px;
     transform-style: preserve-3d;
     transition: transform 0.5s;
-    background: black;
-    color: aliceblue;
+    background: var(--bg-body);
+    
     text-align: center;
-    border-radius: 10px;
+    border-radius: 20px;
+    
+    background: url(./imgs/3.PNG);
+    background-size: cover;
+    
+    
+    
     
   }
   .card:hover {
@@ -102,6 +129,8 @@ header nav .social a img {
   .front {
     z-index: 2;
     margin-top: 100px;
+    color: var(--txt);
+    
   }
 
   .front p {
@@ -113,5 +142,20 @@ header nav .social a img {
     transform: rotateY(180deg);
     text-align: justify;
     padding: 10px;
+    border-radius: 20px;
+
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: var(--beige);
+    
+
+    
   }
   
